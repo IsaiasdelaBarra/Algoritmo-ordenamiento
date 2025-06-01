@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Layout principal: navbar a la izquierda, contenido a la derecha */
+body {
+  display: flex;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff;
+  color: #222;
+}
+
+.bar {
+  border: 1px solid #222;
+  box-sizing: border-box;
+}
+
+.descripcion-algoritmo {
+  margin: 24px 0 0 0;
+  padding: 16px 24px;
+  background: #f8f8f8;
+  color: #222;
+  border-radius: 8px;
+  font-size: 1.1em;
+  min-height: 48px;
+  box-shadow: 0 2px 8px rgba(44, 44, 44, 0.04);
+}
+
+/* Navbar vertical a la izquierda */
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 320px;
+  min-width: 220px;
+  height: 100vh;
+  padding: 2rem 1.5rem 2rem 1.5rem;
+  background-color: #282c34;
+  gap: 2rem;
+  box-sizing: border-box;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.1;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+.controles {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.2rem;
+  width: 100%;
+}
+
+.controles label {
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.controles select,
+.controles input[type="range"] {
+  background: #232336;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.controles button {
+  margin-top: 0.5rem;
+  padding: 10px 0;
+  width: 100%;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #4c8cfc;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.controles button:hover {
+  background-color: #366ed8;
+}
+
+.slider-value {
+  min-width: 2.5em;
+  display: inline-block;
+  text-align: left;
+  color: #61dafb;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+}
+
+/* El contenido principal (barras) debe dejar espacio a la navbar */
+#array-container {
+  display: flex;
+  align-items: flex-start; /* Cambiado de flex-end a flex-start */
+  height: 70vh;
+  background: #fff;
+  width: 100%;
+  margin: 0; /* Elimina el margen superior */
+  padding: 0;
+  transition: margin-left 0.3s, width 0.3s;
+}
+
+/* Responsive para navbar más angosta */
+@media (max-width: 600px) {
+  .navbar {
+    width: 100vw;
+    min-width: 0;
+    height: auto;
+    position: static;
+    padding: 1rem;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  #array-container {
+    margin-left: 0;
+    width: 100vw;
+    padding: 0 0.5rem;
+  }
+}
+
+.main-content {
+  margin-left: 320px; /* igual al ancho de la navbar */
+  width: calc(100vw - 320px);
+  padding: 0 3vw; /* margen lateral proporcional */
+  box-sizing: border-box;
+}

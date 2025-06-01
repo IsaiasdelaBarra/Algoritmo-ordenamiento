@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Algoritmos de Ordenamiento</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <h1>Algoritmos de Ordenamiento</h1>
+      <div class="controles">
+        <label for="algoritmo">Selecciona un algoritmo:</label>
+        <select id="algoritmo" name="algoritmo">
+          <option value="Burbuja">Ordenamiento Burbuja</option>
+          <option value="Seleccion">Ordenamiento por Selección</option>
+          <option value="Insercion">Ordenamiento por Inserción</option>
+          <option value="Merge">Ordenamiento por Mezcla</option>
+          <option value="Quick">Ordenamiento Rápido</option>
+        </select>
+        <label for="tamaño">Tamaño del arreglo:</label>
+        <input
+          type="range"
+          id="tamaño"
+          name="tamaño"
+          min="10"
+          max="100"
+          value="30"
+        />
+        <span id="valor-tamaño" class="slider-value">30</span>
+        <label for="velocidad">Velocidad de animación:</label>
+        <input
+          type="range"
+          id="velocidad"
+          name="velocidad"
+          min="1"
+          max="100"
+          value="80"
+        />
+        <span id="valor-velocidad" class="slider-value">80</span>
+        <button onclick="generarArray()">Generar Arreglo Aleatorio</button>
+        <button onclick="ordenar()">Ordenar</button>
+      </div>
+    </nav>
+    <main class="main-content">
+      <div id="array-container"></div>
+      <div id="descripcion-algoritmo" class="descripcion-algoritmo"></div>
+    </main>
+    <script src="scripts.js"></script>
+  </body>
+</html>
